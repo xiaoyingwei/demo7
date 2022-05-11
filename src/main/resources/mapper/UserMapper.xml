@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiaoyingwei.demo7.bean.User">
+    <insert id="addUser" parameterType="com.xiaoyingwei.demo7.bean.User">
+        insert into t_user(user_name,age) value(#{name},#{age});
+    </insert>
+    <resultMap id="userMap" type="com.xiaoyingwei.demo7.bean.User">
+        <id column="user_id" property="id" jdbcType="INTEGER"/>
+        <result column="user_name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="getUsers" parameterType="com.xiaoyingwei.demo7.bean.User">
+        select user_id as id,user_name as name,age from t_user
+    </select>
+</mapper>

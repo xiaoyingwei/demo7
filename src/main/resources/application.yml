@@ -1,0 +1,14 @@
+spring:
+  redis:
+    host: 128.3.10.3
+    port: 6379
+    password: 1qazxsw2
+    database: 0
+    timout: 30000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+mybatis:
+    mapper-locations:classpath*:mapper/*.xml
